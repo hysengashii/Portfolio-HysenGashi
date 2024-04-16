@@ -1,0 +1,23 @@
+.logo{
+  text-transform: capitalize;
+  font-size: 30px;
+  cursor: pointer;
+  font-family: w;
+}
+.btn{
+  font-weight: 500;
+  text-transform: uppercase;
+}
+footer{
+  background-color: #141414;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+body{
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  background-color: #141414;
+}

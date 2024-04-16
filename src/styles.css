@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: w;
+    src: url(./assets/fonts/WanoQuin-ExtraBold.otf);
+}
+
+body{
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  background-color: #141414;
+}
