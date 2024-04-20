@@ -1,49 +1,39 @@
-
-<div class="website-content">
-  <div class="header">
-    <div class="h1">
-      <h1>Website</h1>
-      <h1>content</h1>
-    </div>
-    <div class="header-revealer"></div>
-  </div>
+<div class="container">
+  <svg id="demo" xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 100 100">
+    <defs>
+      <clipPath id="theClipPath">
+        <rect id="theSquare" x="0" y="50" width="100" height="0" fill="red" />
+      </clipPath>
+    </defs>
+    <line id="target1" x1="0" y1="50" x2="0" y2="50" stroke-width="1" stroke="#fff" />
+    <line id="target2" x1="0" y1="50" x2="0" y2="50" stroke-width="1" stroke="#fff" />
+    <g id="clipPathReveal" clip-path="url(#theClipPath)">
+      <text transform="translate(50 55)" text-anchor="middle" font-size="10" fill="#fff">Contact Form</text>
+    </g>
+  </svg>
+  <img class="avatar" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/314556/demoAvatar.png" alt="Craigs avatar">
+  <a class="gitLink" href="https://github.com/hysengashii" target="_top">Follow me on Github</a>
 </div>
 
-<div class="loading-screen">
-  <div class="loader">
-    <div class="loader-1 bar"></div>
-    <div class="loader-2 bar"></div>
-  </div>
-
-  <div class="counter">
-    <div class="counter-1 digit">
-      <div class="num">0</div>
-      <div class="num num1offset1">1</div>
+<div class="wrapper" *ngIf="showWrapper">
+  <form action="#">
+    <div class="field">
+      <input type="text" id="name" name="name" placeholder="Who are you?" autofocus/>
+      <label for="name">Name</label>
     </div>
-    <div class="counter-2 digit">
-      <div class="num">0</div>
-      <div class="num num1offset2">1</div>
-      <div class="num">2</div>
-      <div class="num">3</div>
-      <div class="num">4</div>
-      <div class="num">5</div>
-      <div class="num">6</div>
-      <div class="num">7</div>
-      <div class="num">8</div>
-      <div class="num">9</div>
-      <div class="num">0</div>
+    <div class="field">
+      <input type="text" id="email" name="email" placeholder="Email@gmail.com" />
+      <label for="email">E-Mail</label>
     </div>
-    <div class="counter-3 digit">
-      <div class="num">0</div>
-      <div class="num">1</div>
-      <div class="num">2</div>
-      <div class="num">3</div>
-      <div class="num">4</div>
-      <div class="num">5</div>
-      <div class="num">6</div>
-      <div class="num">7</div>
-      <div class="num">8</div>
-      <div class="num">9</div>
+    <div class="field">
+      <textarea id="msg" rows="3" name="msg" placeholder="You message..."></textarea>
+      <label for="msg">Message</label>
     </div>
-  </div>
+    <input class="button" type="submit" value="Send" />
+  </form>
 </div>
+
+
+
+
+

@@ -1,117 +1,124 @@
-.loading-screen{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  color: #FFF;
-  pointer-events: none;
-}
 
-.counter{
-  position: fixed;
-  left: 50px;
-  bottom: 50px;
+.container {
   display: flex;
-  height: 100px;
-  font-size: 100px;
-  line-height: 102px;
-  clip-path: polygon(0 0,100% 0, 100% 100px, 0 100px);
-  font-weight: 400;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.counter-1,
-.counter-2,
-.counter-3{
-  position: relative;
-  top: -15px;
+#demo {
+  max-height: 80%;
+  max-width: 80%;
+  font-weight: 700;
 }
 
-.num1offset1{
-  position: relative;
-  right: -25px;
-}
-
-.num1offset2{
-  position: relative;
-  right: -10px;
-}
-
-.loader{
+.avatar {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 50px;
-  transform: translate(-50%, -50%);
-  display: flex;
-  background: rgb(80,80,80);
-}
-.loader-1{
-  position: relative;
-  background: #FFF;
-  width: 200px;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 120px;
+  height: auto;
+  z-index: 10;
 }
 
-.loader-2{
-  position: relative;
-  width: 100px;
-  background: #fff;
-}
-
-.bar{
-  height: 50px;
-}
-
-.website-content{
+.gitLink {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  text-decoration: none;
+  font-size: 0.6rem;
+  color: white;
+  background: #42a6e0;
+  padding: 4px 12px;
+  border-radius: 4px;
+  bottom: 30px;
+  right: 70px;
+  z-index: 20;
+}
+
+
+*:focus {
+  outline: 0;
+}
+
+.wrapper {
+  margin: 100px auto 0;
+  width: 70%;
+  max-width: 1000px;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.header{
   position: relative;
-  width: max-content;
-  height: max-content;
+  top: -600px;
 }
 
-.h1{
-  display: flex;
-}
-h1{
-  font-size: 80px;
-}
-
-.header .h1 h1{
-  text-align: center;
-  position: relative;
-  top: 80px;
-  margin: 0 10px;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-.header-revealer{
-  position: absolute;
-  top: 0;
+form {
   width: 100%;
-  height: 100%;
+  margin: 0;
 }
 
-.header-revealer::after{
-  content: "";
+form * {
+  font-size: 1rem;
+  letter-spacing: 0.075em;
+  font-weight: 300;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+form .field {
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+form .field label {
   position: absolute;
   top: 0;
   left: 0;
-  width: 105%;
-  height: 110%;
-  background: #FFF;
-  top: 80px;
+  background: linear-gradient(90deg, #b13e8b, #372056);
+  width: 100%;
+  height: 64px;
+  transition: width 333ms ease-in-out;
+  text-align: center;
+  padding: 18px 0;
 }
 
+form .field input[type="text"],
+form .field textarea {
+  border: none;
+  width: 100%;
+  height: 64px;
+  margin: 0;
+  padding-left: 19.5%;
+  color: #313a3d;
+}
+
+form #msg {
+  height: 64px;
+  resize: none;
+  transition: all 333ms ease-in-out;
+  padding-top: 18px;
+}
+form textarea:focus#msg,
+form textarea:not(:placeholder-shown)#msg {
+  height: 166px;
+}
+form input[type="text"]:focus + label,
+form input[type="text"]:not(:placeholder-shown) + label,
+form textarea:focus + label,
+form textarea:not(:placeholder-shown) + label,
+form .field:hover label {
+  width: 18%;
+}
+form input[type="submit"] {
+  background: linear-gradient(90deg, #b13e8b, #812d65);
+  -webkit-appearance: none;
+  border: none;
+  position: relative;
+  padding: 13px 50px;
+  transition: all 0.3s ease-in-out;
+}
+form input[type="submit"]:hover,
+form input[type="submit"]:focus {
+  background: #372056;
+}

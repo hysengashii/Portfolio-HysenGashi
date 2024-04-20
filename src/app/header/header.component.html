@@ -1,11 +1,14 @@
 <header class="navbar">
   <span></span>
-  <div class="logo">Portfolio</div>
-  <ul class="menu">
-      <li><a href="#" routerLink="/home">home</a></li>
-      <li><a href="#about">about</a></li>
-      <li><a href="#" routerLink="/projects">projects </a></li>
-      <li><a href="#" routerLink="/contact">contact</a></li>
+  <div class="logo" routerLink="/home">Portfolio</div>
+  <ul class="menu" [class.active]="isMenuOpen">
+    <li><a class="menu-item" href="#" routerLink="/home" (click)="closeMenu()">home</a></li>
+    <li><a class="menu-item" href="#" routerLink="/projects" (click)="closeMenu()">projects</a></li>
+    <li><a class="menu-item" href="#" routerLink="/contact" (click)="closeMenu()">contact</a></li>
   </ul>
-  <div class="btn">instagram</div>
+  <div class="btn" (click)="toggleMenu()">
+    <div class="icon-bar"></div>
+    <div class="icon-bar"></div>
+    <div class="icon-bar"></div>
+  </div>
 </header>

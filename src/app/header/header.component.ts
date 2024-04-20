@@ -7,6 +7,7 @@ import { gsap } from 'gsap';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isMenuOpen: boolean = false;
 
   constructor() { }
 
@@ -14,27 +15,32 @@ export class HeaderComponent implements OnInit {
     this.animateLogo();
   }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
   animateLogo(): void {
     const logo = document.querySelector('.logo');
     let rotation = 0;
 
-    // Function to rotate the logo
+
     const rotateLogo = () => {
-      rotation += 360; // Increment rotation by 360 degrees
+      rotation += 360;
       gsap.to(logo, { duration: 1, rotation: rotation });
     };
 
-    // Rotate the logo initially
     rotateLogo();
 
-    // Rotate the logo every 5 seconds
     setInterval(() => {
       rotateLogo();
     }, 5002);
 
     document.querySelectorAll('.menu li').forEach((liElement) => {
       liElement.addEventListener('click', () => {
-        // Toggle a class to rotate the clicked li element
         liElement.classList.toggle('clicked');
       });
     });

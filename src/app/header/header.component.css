@@ -1,14 +1,14 @@
 
 .navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 3rem;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  z-index: 1000;
 }
 
 .navbar span {
@@ -34,7 +34,7 @@
 
 .menu li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 10px 10px;
   cursor: pointer;
 }
 
@@ -63,6 +63,9 @@
     cursor: pointer;
     font-family: w;
 }
+ul{
+  margin-bottom: 0;
+}
 
 li{
     list-style: none;
@@ -71,23 +74,60 @@ li{
 a{
     color: #f7f5f5;
     text-decoration: none;
+    font-family: w;
 }
 
 .menu{
     display: flex;
-    gap: 5rem;
+    gap: 4rem;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 25px;
 }
-
-
 .btn{
     font-weight: 500;
     text-transform: uppercase;
 }
 
 
+
+
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+    transition: transform 0.03s ease;
+    flex-direction: column;
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    background-color: #0c0c0c;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(5, 5, 5, 0.1);
+    padding: 1rem;
+    gap: 1rem;
+  }
+a{
+  font-size: 18px;
+}
+.menu.active {
+  display: flex;
+  transform: translateY(0);
+}
+
+  .btn {
+    display: block;
+    cursor: pointer;
+  }
+  @keyframes rotate {
+  }
+
+  .btn .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #333;
+  }
+}
 
 
 
