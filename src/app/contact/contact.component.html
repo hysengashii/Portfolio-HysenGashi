@@ -16,17 +16,17 @@
 </div>
 
 <div class="wrapper" *ngIf="showWrapper">
-  <form action="#">
+  <form (ngSubmit)="sendEmail()">
     <div class="field">
-      <input type="text" id="name" name="name" placeholder="Who are you?" autofocus/>
+      <input type="text" id="name" name="name" [(ngModel)]="form.name" placeholder="Who are you?" required/>
       <label for="name">Name</label>
     </div>
     <div class="field">
-      <input type="text" id="email" name="email" placeholder="Email@gmail.com" />
+      <input type="email" id="email" name="email" [(ngModel)]="form.email" placeholder="Email@gmail.com" required/>
       <label for="email">E-Mail</label>
     </div>
     <div class="field">
-      <textarea id="msg" rows="3" name="msg" placeholder="You message..."></textarea>
+      <textarea id="msg" rows="3" name="msg" [(ngModel)]="form.message" placeholder="Your message..." required></textarea>
       <label for="msg">Message</label>
     </div>
     <input class="button" type="submit" value="Send" />

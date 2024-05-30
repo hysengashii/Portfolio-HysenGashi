@@ -1,42 +1,40 @@
-
 .spacer {
-  height: 50vh;
+  height: 10vh;
   opacity: 0.2;
 }
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-top: 50px;
 }
 
 .card {
-  position: relative;
-  top: -300px;
-  margin: 10px;
-  flex: 1 1 900px;
-  max-width: 600px;
+  margin: 20px 0;
+  padding-top: 40px;
+  width: 100%;
   text-align: center;
+  background-color: #ffcfb8;
 }
 
-.card img {
-  max-width: 100%;
-  height: auto;
+.card-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .card-text {
-  background-color: rgba(92, 68, 68, 0.7);
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 5px;
+  font-size: 1rem;
+  margin-top: 10px;
 }
-
-
-
-
 
 .loading-screen{
   position: fixed;
@@ -74,7 +72,20 @@
 .bar{
   height: 50px;
 }
+.github-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #24292e;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px;
+}
 
+.github-link:hover {
+  background-color: #0366d6;
+}
 
 .h1 {
   position: absolute;
@@ -85,17 +96,52 @@
   margin-top: 35px;
 }
 
+.image-row img {
+  width: calc(25% - 10px);
+  height: auto;
+  cursor: pointer;
+}
 
+.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(4);
+  transition: transform 0.5s ease-in-out, top 0.5s, left 0.5s, z-index 0.5s;
+  z-index: 10;
+}
 
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .image-row img {
+    width: calc(33.33% - 10px);
+  }
+  .zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(3);
+    transition: transform 0.5s ease-in-out, top 0.5s, left 0.5s, z-index 0.5s;
+    z-index: 10;
+  }
+}
 
+@media (max-width: 800px) {
+  .image-row img {
+    width: calc(50% - 10px);
+  }
+  .zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    transition: transform 0.5s ease-in-out, top 0.5s, left 0.5s, z-index 0.5s;
+    z-index: 10;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 600px) {
+  .image-row img {
+    width: calc(100% - 10px);
+  }
+}

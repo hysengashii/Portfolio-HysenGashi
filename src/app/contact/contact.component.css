@@ -1,11 +1,4 @@
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
 
 #demo {
   max-height: 80%;
@@ -26,7 +19,7 @@
 .gitLink {
   position: absolute;
   text-decoration: none;
-  font-size: 0.6rem;
+  font-size: 1 rem;
   color: white;
   background: #42a6e0;
   padding: 4px 12px;
@@ -83,7 +76,7 @@ form .field label {
   padding: 18px 0;
 }
 
-form .field input[type="text"],
+form .field input[type="text"],form .field input[type="email"],
 form .field textarea {
   border: none;
   width: 100%;
@@ -122,3 +115,16 @@ form input[type="submit"]:hover,
 form input[type="submit"]:focus {
   background: #372056;
 }
+
+
+@media (max-width: 1200px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+}
+

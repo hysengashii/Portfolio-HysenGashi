@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2} from '@angular/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -8,12 +8,12 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+  private currentZoomedElement: HTMLElement | null = null;
 
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
     this.animateWithGSAP();
-    this.initScrollTrigger();
   }
 
   animateWithGSAP(): void {
@@ -84,29 +84,20 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  initScrollTrigger(): void {
-    gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(
-      ".card:not(:first-child)",
-      {
-        x: () => window.innerWidth / 2 + 700,
-        rotate: -390,
-      },
-      {
-        x: 0,
-        stagger: 4,
-        rotate: 0,
-        scrollTrigger: {
-          trigger: ".cards",
-          pin: true,
-          scrub: true,
-          start: "top center",
-          end: "bottom top",
-          invalidateOnRefresh: true,
-        },
-        duration: 1
-      }
-    );
+
+  onImageClick(event: Event): void {
+    const element = event.target as HTMLElement;
+    if (this.currentZoomedElement && this.currentZoomedElement !== element) {
+      this.renderer.removeClass(this.currentZoomedElement, 'zoomed');
+    }
+
+    if (element.classList.contains('zoomed')) {
+      this.renderer.removeClass(element, 'zoomed');
+      this.currentZoomedElement = null;
+    } else {
+      this.renderer.addClass(element, 'zoomed');
+      this.currentZoomedElement = element;
+    }
   }
 }
